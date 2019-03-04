@@ -15,3 +15,20 @@
 
 @import "./base/reset";
 @import "./base/typograph";
+@import "./abstracts/variables";
+// @import "./abstracts/mixins/font";
+
+body{
+  background-color: $gray-e5;
+
+  @media (max-width: 767px){
+    background-color: $white;
+  }
+}
+
+.container{
+  box-sizing: border-box;
+  max-width: 1165px;
+  padding: 0 15px;
+  margin: auto;
+}

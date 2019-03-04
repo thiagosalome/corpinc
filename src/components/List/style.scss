@@ -1,0 +1,50 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/mixins/font";
+
+.list{
+  margin: 18px 0;
+
+  &__title{
+    @include font-source('Inter', 14px, $blue-8c, normal, 18px);
+    text-transform: uppercase;
+  }
+  
+  &__item{
+    height: 55px;
+    padding: 15px 16px;
+    border-top: 1px solid $gray-c4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &:last-child{
+      border-bottom: 1px solid $gray-c4;
+    }
+
+    p{
+      @include font-source('Inter', 18px, $blue-4b, normal, 24px);
+    
+      &:before{
+        content: 'R$';
+        margin-right: 5px;
+        display: inline-block;
+      }
+    }
+
+    a{
+      @include font-source('Inter', 18px, $blue-8c, normal, 24px);
+      text-decoration: none;
+
+      &:after{
+        margin-left: 12px;
+        background-image: url("../../images/arrow.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 6px;
+        height: 12px;
+        content: '';
+        display: inline-block;
+      }
+    }
+  }
+}

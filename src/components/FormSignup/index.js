@@ -12,15 +12,15 @@ class FormSignup extends Component{
         </header>
         <form className="form-signup">
           <div className="form-signup__item">
-            <label for="">Nome</label>
+            <label htmlFor="">Nome</label>
             <input type="text" name="Nome" />
           </div>
           <div className="form-signup__item">
-            <label for="">E-mail</label>
+            <label htmlFor="">E-mail</label>
             <input type="email" name="E-mail" />
           </div>
           <div className="form-signup__item">
-            <label for="">Senha</label>
+            <label htmlFor="">Senha</label>
             <input type="password" name="Senha" />
           </div>
           <input className="form-signup__submit" type="submit" name="Cadastrar" value="Cadastrar" />

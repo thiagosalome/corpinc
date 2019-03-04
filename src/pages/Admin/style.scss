@@ -1,0 +1,34 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/mixins/font";
+
+.admin{
+
+  &__description{
+    @include font-source('Roboto', 14px, $blue-6a, normal, normal);
+    max-width: 905px;
+    margin: 20px auto;
+
+    &--desktop, &--mobile{
+      @extend .admin__description;
+    }
+
+    &--desktop{
+      display: block;
+    }
+    &--mobile{
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .admin__description{
+
+    &--desktop{
+      display: none;
+    }
+    &--mobile{
+      display: block;
+    }
+  }
+}

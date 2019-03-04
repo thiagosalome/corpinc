@@ -1,0 +1,27 @@
+@import "../../abstracts/variables";
+
+.banner{
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 366px;
+  z-index: -1;
+  
+  &::after{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: linear-gradient(10.79deg, $orange 0%, $orange-light 100%);
+    opacity: 0.6;
+    position: absolute;
+  }
+
+  img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

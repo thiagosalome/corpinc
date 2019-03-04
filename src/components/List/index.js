@@ -6,10 +6,22 @@ class List extends Component{
   render(){
     return(
       <div>
-        <p>Itens</p>
+        <h3 className="list__title">Itens</h3>
         <ul className="list">
           <li className="list__item">
-            <p>R$ 1000,00</p>
+            <p>1000,00</p>
+            <a href="" title="">Detalhes</a>
+          </li>
+          <li className="list__item">
+            <p>1000,00</p>
+            <a href="" title="">Detalhes</a>
+          </li>
+          <li className="list__item">
+            <p>1000,00</p>
+            <a href="" title="">Detalhes</a>
+          </li>
+          <li className="list__item">
+            <p>1000,00</p>
             <a href="" title="">Detalhes</a>
           </li>
         </ul>
