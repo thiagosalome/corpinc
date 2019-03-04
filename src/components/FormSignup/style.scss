@@ -1,0 +1,52 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/mixins/font";
+@import "../../abstracts/mixins/button";
+@import "../../abstracts/mixins/input";
+
+.signup{
+  padding: 0 20px;
+  width: 350px;
+
+  header{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3{
+      @include font-source("Roboto", 20px ,$blue-4b, normal, normal);
+    }
+
+    button{
+      border: none;
+      background-color: transparent;
+      @include font-source('Inter', 14px, $blue-4b, bold, normal);
+      cursor: pointer;
+    }
+  }
+}
+
+.form-signup{
+  background-color: $white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px $gray-c4;
+
+  &__item{
+
+    label{
+      @include font-source('Inter', 14px, $blue-8c, 600, 18px);
+    }
+
+    input{
+      @include font-source('Inter', 18px, $blue-4b, normal, 24px);
+      @include input();
+      margin-bottom: 10px;
+    }
+  }
+
+  &__submit{
+    @include font-source("Inter", 16px, $white, 600, 20px);
+    @include button();
+  }
+}

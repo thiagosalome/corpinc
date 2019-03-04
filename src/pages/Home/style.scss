@@ -1,0 +1,62 @@
+@import "../../abstracts/variables.scss";
+@import "../../abstracts/mixins/font.scss";
+
+.home{
+  background-image: url("../../images/home.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  bottom: 0;
+  height: 100vh;
+  z-index: 1;
+  
+  &::after{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    // background-color: $blue-4b;
+    background: linear-gradient(10.79deg, $orange 0%, $orange-light 100%);
+    opacity: 0.8;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background-color: $gray-f5;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 440px;
+
+    &-image{
+      background-image: url("../../images/home-card.svg");
+      background-size: cover;
+      width: 500px;
+
+      h2{
+        @include font-source('Inter', 25px, $white, 300, normal);
+        margin: 20px;
+      }
+    }
+    
+    &-slider{
+      display: flex;
+      width: 700px;
+      position: absolute;
+      left: 0;
+
+      &-wrapper{
+        padding: 20px;
+        width: 370px;
+        overflow: hidden;
+        position: relative;
+      }
+    }
+  }
+}

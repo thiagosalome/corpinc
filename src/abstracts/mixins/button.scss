@@ -1,0 +1,18 @@
+@mixin button() {
+  background: linear-gradient(12.31deg, $orange 0%, $orange-light 100%);
+  border: none;
+  margin-top: 25px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid $orange;
+
+  &:hover{
+    color: $orange;
+    background: $white;
+    border: 1px solid $orange;
+  }
+}
