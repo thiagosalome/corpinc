@@ -17,7 +17,7 @@
     bottom: 0;
     content: '';
     background: linear-gradient(10.79deg, $orange 0%, $orange-light 100%);
-    opacity: 0.8;
+    opacity: 0.6;
     position: absolute;
     z-index: -1;
   }
@@ -43,20 +43,7 @@
         margin: 20px;
       }
     }
-    
-    &-slider{
-      display: flex;
-      width: 700px;
-      position: absolute;
-      left: 0;
-
-      &-wrapper{
-        padding: 20px;
-        width: 370px;
-        overflow: hidden;
-        position: relative;
-      }
-    }
+  
   }
 }
 
@@ -66,10 +53,6 @@
 
       &-image{
         display: none;
-      }
-
-      &-slider-wrapper{
-        width: 350px;
       }
     }
   }

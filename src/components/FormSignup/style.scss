@@ -4,8 +4,12 @@
 @import "../../abstracts/mixins/input";
 
 .signup{
-  padding: 0 20px;
+  margin: 0 20px;
   width: 350px;
+
+  @media (max-width: 767px){
+    width: 300px;
+  }
 
   header{
     padding: 10px 0;
@@ -22,6 +26,7 @@
       background-color: transparent;
       @include font-source('Inter', 14px, $blue-4b, bold, normal);
       cursor: pointer;
+      outline: none;
     }
   }
 }

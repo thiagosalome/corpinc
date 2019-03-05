@@ -8,7 +8,7 @@ class FormLogin extends Component{
       <div className="login">
         <header>
           <h3>Acessar conta</h3>
-          <button>Cadastrar</button>
+          <button data-to='0' onClick={this.props.onClick}>Cadastrar</button>
         </header>
         <form className="form-login">
           <div className="form-login__item">

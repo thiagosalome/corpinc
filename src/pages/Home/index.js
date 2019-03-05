@@ -3,6 +3,7 @@ import "./style.scss";
 import Header from "../../layout/Header/";
 import FormSignup from "../../components/FormSignup/";
 import FormLogin from "../../components/FormLogin/";
+import Slider from "../../components/Slider/";
 
 const Home = () => {
   return(
@@ -12,12 +13,10 @@ const Home = () => {
         <div className="home__card-image">
           <h2><strong>Venha conhecer</strong><br/>nossa aplicação!</h2>
         </div>
-        <div className="home__card-slider-wrapper">
-          <div className="home__card-slider">
+        <Slider>
             <FormSignup></FormSignup>
             <FormLogin></FormLogin>
-          </div>
-        </div>
+        </Slider>
       </section>
     </main>
   )

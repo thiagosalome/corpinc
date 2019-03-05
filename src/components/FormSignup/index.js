@@ -4,11 +4,12 @@ import "./style.scss";
 class FormSignup extends Component{
 
   render(){
+
     return(
       <div className="signup">
         <header>
           <h3>Criar uma conta</h3>
-          <button>Acessar</button>
+          <button data-to='1' onClick={this.props.onClick}>Acessar</button>
         </header>
         <form className="form-signup">
           <div className="form-signup__item">
