@@ -1,0 +1,21 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/mixins/font.scss";
+
+.task{
+  padding: 20px 0;
+
+  &__title{
+    @include font-source("Inter", 30px, $blue-4b, bold, normal);
+
+    &:before{
+      content: 'R$';
+      margin-right: 5px;
+      display: inline-block;
+    }
+  }
+
+  &__description{
+    @include font-source('Roboto', 16px, $blue-6a, normal, normal);
+    margin: 20px auto;
+  }
+}
