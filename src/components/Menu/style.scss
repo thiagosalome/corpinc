@@ -1,0 +1,114 @@
+@import "../../abstracts/variables";
+@import "../../abstracts/mixins/font";
+
+.menu{
+
+  &__hamburguer{
+    display: none;
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+
+    &-item{
+
+      a{
+        @include font-source('Roboto', 16px, $white, normal, normal);
+        padding: 5px 20px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px){
+
+  .menu{
+
+    &.open{
+
+      .menu__hamburguer{
+         span{
+          
+          i:not(:nth-child(2)){
+            width: 22px;
+          }
+
+          i:nth-child(2){
+            width: 30px;
+          }
+         }
+      }
+
+      nav{
+        transform: translateX(0)
+      }
+    }
+
+    &__hamburguer{
+      border: none;
+      background-color: transparent;
+      display: block;
+      color: $white;
+      outline: none;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+      span{
+        display: flex;
+        flex-wrap: wrap;
+        width: 30px;
+        justify-content: flex-end;
+
+        i{
+          background-color: $white;
+          height: 2.5px;
+          display: block;
+          margin-bottom: 8px;
+          border-radius: 2px;
+          transition: all 0.3s ease-in-out;
+
+          &:not(:nth-child(2)){
+            width: 30px;
+          }
+
+          &:nth-child(2){
+            width: 22px;
+          }
+
+          &:last-child{
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    nav{
+      position: fixed;
+      right: 0;
+      top: 80px;
+      height: 100%;
+      background-color: #ffffff;
+      width: 250px;
+      transform: translateX(250px);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__list{
+      display: block;
+      text-align: right;
+      padding: 15px 0;
+
+      &-item{
+        line-height: 35px;
+
+        a{
+          color: $blue-4b;
+        }
+      }
+    }
+  }
+}

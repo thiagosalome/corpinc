@@ -16,7 +16,6 @@
     right: 0;
     bottom: 0;
     content: '';
-    // background-color: $blue-4b;
     background: linear-gradient(10.79deg, $orange 0%, $orange-light 100%);
     opacity: 0.8;
     position: absolute;
@@ -56,6 +55,21 @@
         width: 370px;
         overflow: hidden;
         position: relative;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px){
+  .home{
+    &__card{
+
+      &-image{
+        display: none;
+      }
+
+      &-slider-wrapper{
+        width: 350px;
       }
     }
   }
