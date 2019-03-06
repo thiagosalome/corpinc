@@ -7,6 +7,7 @@ class FormSignup extends Component{
   constructor(props){
     super(props);
 
+    this.message = React.createRef();
     this.state = {
       name : "",
       email : "",
@@ -24,7 +25,6 @@ class FormSignup extends Component{
       return <Redirect to='/tasks'/>;
     }
 
-    let errorsActive = this.state.formErrors !== '' ? 'active' : ''; 
     return(
       <div className="signup">
         <header>
@@ -46,7 +46,7 @@ class FormSignup extends Component{
           </div>
           <input className="form-signup__submit" type="submit" name="Cadastrar" value="Cadastrar" />
         </form>
-        <p className={"form-signup__errors " + errorsActive}>{this.state.formErrors}</p>
+        <p ref={this.message} className={"form-signup__errors"}>{this.state.formErrors}</p>
       </div>
     )
   }
@@ -70,7 +70,7 @@ class FormSignup extends Component{
       formErrors = 'Campo email inválido.';
     }
     else if(!passwordValid){
-      formErrors = 'Campo senha deve ter mais de 6 caracteres.';
+      formErrors = 'A senha está muito curta.';
     }
     else{
       formErrors = '';
@@ -85,6 +85,7 @@ class FormSignup extends Component{
   }
 
   registerUser = async () => {
+    
     if(this.state.formErrors === ''){
       try {
         const response = await api.post("/auth/local/register", {
@@ -102,6 +103,13 @@ class FormSignup extends Component{
         console.log(error);
         this.setState({formErrors : {signup : "Erro ao cadastrar"}});
       }
+    }
+    else{
+      const message = this.message.current;
+      message.classList.add("active")
+      setTimeout(function(){
+        message.classList.remove("active")
+      }, 2000);
     }
   }
 }
