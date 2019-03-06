@@ -7,7 +7,7 @@ class FormSignup extends Component{
   constructor(props){
     super(props);
 
-    this.message = React.createRef();
+    this.messageSignup = React.createRef();
     this.state = {
       name : "",
       email : "",
@@ -46,7 +46,7 @@ class FormSignup extends Component{
           </div>
           <input className="form-signup__submit" type="submit" name="Cadastrar" value="Cadastrar" />
         </form>
-        <p ref={this.message} className={"form-signup__errors"}>{this.state.formErrors}</p>
+        <p ref={this.messageSignup} className={"form-signup__errors"}>{this.state.formErrors}</p>
       </div>
     )
   }
@@ -95,22 +95,26 @@ class FormSignup extends Component{
         });
   
         if(response.data.user){
-          localStorage.setItem("authToken", response.data.user.id);
+          localStorage.setItem("authToken", response.data.jwt);
           this.setState({redirect: true})
         }
         
       } catch (error) {
         console.log(error);
-        this.setState({formErrors : {signup : "Erro ao cadastrar"}});
+        this.setState({formErrors : "Erro ao cadastrar"}, this.showMessage);
       }
     }
     else{
-      const message = this.message.current;
-      message.classList.add("active")
-      setTimeout(function(){
-        message.classList.remove("active")
-      }, 2000);
+      this.showMessage();
     }
+  }
+
+  showMessage = () => {
+    const message = this.messageSignup.current;
+    message.classList.add("active")
+    setTimeout(function(){
+      message.classList.remove("active")
+    }, 2000);
   }
 }
 

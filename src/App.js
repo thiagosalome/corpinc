@@ -1,57 +1,30 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
+import Routes from "./routes";
 import './App.scss';
-import Home from "./pages/Home/";
-import Admin from "./pages/Admin/";
-import Task from "./pages/Task/";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      isAuthenticated: false
+    };
+  }
+
+  userHasAuthenticated = authenticated => {
+    this.setState({ isAuthenticated: authenticated });
+  }
+
   render() {
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated
+    };
+
     return (
-      <BrowserRouter>
-        <Switch>
-          <HomeRoute exact path="/" component={Home}></HomeRoute>
-          <PrivateRoute exact path="/tasks/" component={Admin}></PrivateRoute>
-          <PrivateRoute path="/tasks/:id" component={Task}></PrivateRoute>
-        </Switch>
-      </BrowserRouter>
+      <Routes childProps={childProps}></Routes>
     );
   }
-}
-
-const HomeRoute = ({ component: Component, ...rest }) => {
-  return(
-    <Route
-      {...rest}
-      render={props =>
-        localStorage.getItem("authToken") ? (
-          <Redirect to="/tasks" />
-        ) : (
-          <Component {...props} />
-        )
-      }
-    />
-  )  
-}
-
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  return(
-    <Route
-      {...rest}
-      render={props =>
-        localStorage.getItem("authToken") ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/",
-              state: { from: props.location }
-            }}
-          />
-        )
-      }
-    />
-  )  
 }
 
 export default App;
