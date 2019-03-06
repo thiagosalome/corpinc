@@ -1,5 +1,5 @@
-@import "../../abstracts/variables";
-@import "../../abstracts/mixins/font";
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins/font";
 
 .list{
   margin: 18px 0;
@@ -37,7 +37,7 @@
 
       &:after{
         margin-left: 12px;
-        background-image: url("../../images/arrow.png");
+        background-image: url("../../assets/images/arrow.png");
         background-size: cover;
         background-repeat: no-repeat;
         width: 6px;

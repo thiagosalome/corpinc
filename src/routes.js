@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Redirect, BrowserRouter, Switch} from "react-router-dom";
-import auth from "./auth";
+import auth from "./services/auth";
 import Home from "./pages/Home/";
 import Admin from "./pages/Admin/";
 import Task from "./pages/Task/";

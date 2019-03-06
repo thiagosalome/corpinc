@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./style.scss";
 import api from "../../services/api";
-import auth from "../../auth";
+import auth from "../../services/auth";
 import {Redirect} from 'react-router-dom';
 
 class FormLogin extends Component{
@@ -86,14 +86,17 @@ class FormLogin extends Component{
         });
         
         if(response.data.user){
-          localStorage.setItem("authToken", response.data.jwt);
+          // Inicia seção do usuário
+
+          /*localStorage.setItem("authToken", response.data.jwt);
+          
           auth.authenticate((response) => {
             if(response){
               console.log("Auth Login");
               console.log(response);
               this.setState({redirect: true})
             }
-          })
+          })*/
         }
         
       } catch (error) {

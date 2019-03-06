@@ -1,7 +1,7 @@
-@import "../../abstracts/variables.scss";
-@import "../../abstracts/mixins/font";
-@import "../../abstracts/mixins/button";
-@import "../../abstracts/mixins/input";
+@import "../../styles/abstracts/variables.scss";
+@import "../../styles/abstracts/mixins/font";
+@import "../../styles/abstracts/mixins/button";
+@import "../../styles/abstracts/mixins/input";
 
 .form-list{
   margin-top: -30px;
@@ -97,7 +97,7 @@
       display: none;
 
       &:checked + label[for='check-terms']:before{
-        background: url("../../images/check.png");
+        background: url("../../assets/images/check.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 80%;

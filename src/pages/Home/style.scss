@@ -1,8 +1,8 @@
-@import "../../abstracts/variables.scss";
-@import "../../abstracts/mixins/font.scss";
+@import "../../styles/abstracts/variables.scss";
+@import "../../styles/abstracts/mixins/font.scss";
 
 .home{
-  background-image: url("../../images/home.jpeg");
+  background-image: url("../../assets/images/home.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -34,7 +34,7 @@
     height: 440px;
 
     &-image{
-      background-image: url("../../images/home-card.svg");
+      background-image: url("../../assets/images/home-card.svg");
       background-size: cover;
       width: 500px;
 
