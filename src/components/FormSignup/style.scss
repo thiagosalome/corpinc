@@ -2,6 +2,7 @@
 @import "../../styles/abstracts/mixins/font";
 @import "../../styles/abstracts/mixins/button";
 @import "../../styles/abstracts/mixins/input";
+@import "../../styles/abstracts/mixins/message";
 
 .signup{
   margin: 0 20px;
@@ -57,18 +58,9 @@
     margin-top: 10px;
   }
 
-  &__errors{
-    background-color: rgba(0,0,0,0.8);
-    color: $white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: 0.5s;
+  &__message{
+    @include message();
     bottom: -70px;
-    width: 300px;
 
     &.active{
       bottom: -25px;

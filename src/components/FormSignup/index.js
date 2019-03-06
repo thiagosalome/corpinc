@@ -40,7 +40,7 @@ class FormSignup extends Component{
           </div>
           <input className="form-signup__submit" type="submit" name="Cadastrar" value="Cadastrar" />
         </form>
-        <p ref={this.messageSignup} className={"form-signup__errors"}>{this.state.formMessage}</p>
+        <p ref={this.messageSignup} className={"form-signup__message"}>{this.state.formMessage}</p>
       </div>
     )
   }

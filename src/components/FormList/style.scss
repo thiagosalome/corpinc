@@ -2,6 +2,7 @@
 @import "../../styles/abstracts/mixins/font";
 @import "../../styles/abstracts/mixins/button";
 @import "../../styles/abstracts/mixins/input";
+@import "../../styles/abstracts/mixins/message";
 
 .form-list{
   margin-top: -30px;
@@ -12,6 +13,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
+  overflow: hidden;
 
   &__entry{
     width: 560px;
@@ -73,10 +76,11 @@
       }
     }
 
-    button{
-      @include font-source("Inter", 16px, $white, 600, 20px);
-      @include button();
-    }
+  }
+  
+  &__submit{
+    @include font-source("Inter", 16px, $white, 600, 20px);
+    @include button();
   }
 
   &__checkbox{
@@ -102,6 +106,15 @@
         background-position: center;
         background-size: 80%;
       }
+    }
+  }
+
+  &__message{
+    @include message();
+    bottom: -70px;
+
+    &.active{
+      bottom: 10px;
     }
   }
 }

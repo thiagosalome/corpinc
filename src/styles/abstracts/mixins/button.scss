@@ -15,4 +15,11 @@
     background: $white;
     border: 1px solid $orange;
   }
+  
+  &:disabled{
+    color: $white;
+    opacity: 0.5;
+    background: $blue-4b;
+    border: 1px solid $blue-4b;
+  }
 }

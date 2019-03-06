@@ -34,7 +34,7 @@ class FormSignin extends Component{
             <input type="password" name="password" onChange={this.handleChange} />
           </div>
           <input className="form-signin__submit" type="submit" name="Acessar" value="Acessar" />
-          <p ref={this.messageSignin} className={"form-signin__errors"}>{this.state.formMessage}</p>
+          <p ref={this.messageSignin} className={"form-signin__message"}>{this.state.formMessage}</p>
         </form>
       </div>
     )
