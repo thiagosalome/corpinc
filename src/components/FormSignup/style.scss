@@ -6,6 +6,7 @@
 .signup{
   margin: 0 20px;
   width: 350px;
+  position: relative;
 
   @media (max-width: 767px){
     width: 300px;
@@ -53,5 +54,24 @@
   &__submit{
     @include font-source("Inter", 16px, $white, 600, 20px);
     @include button();
+    margin-top: 10px;
+  }
+
+  &__errors{
+    background-color: rgba(0,0,0,0.8);
+    color: $white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    bottom: -70px;
+    width: 300px;
+
+    &.active{
+      bottom: -25px;
+    }
   }
 }

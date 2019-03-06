@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import "./style.scss";
-// import FormSignup from "../../components/FormSignup/";
-// import FormLogin from "../../components/FormLogin/";
 
 class Slider extends Component{
   constructor(props){
