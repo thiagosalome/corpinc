@@ -3,7 +3,7 @@
 @import "../../styles/abstracts/mixins/button";
 @import "../../styles/abstracts/mixins/input";
 
-.login{
+.signin{
   margin: 0 20px;
   width: 350px;
   position: relative;
@@ -32,7 +32,7 @@
   }
 }
 
-.form-login{
+.form-signin{
   background-color: $white;
   padding: 20px;
   border-radius: 5px;

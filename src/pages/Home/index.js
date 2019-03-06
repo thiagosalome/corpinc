@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import Header from "../../layout/Header/";
 import FormSignup from "../../components/FormSignup/";
-import FormLogin from "../../components/FormLogin/";
+import FormSignin from "../../components/FormSignin/";
 import Slider from "../../components/Slider/";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
         </div>
         <Slider>
             <FormSignup></FormSignup>
-            <FormLogin></FormLogin>
+            <FormSignin></FormSignin>
         </Slider>
       </section>
     </main>

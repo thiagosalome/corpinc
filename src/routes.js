@@ -1,54 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Route, Redirect, BrowserRouter, Switch} from "react-router-dom";
-import auth from "./services/auth";
+import {isAuthenticated} from "./services/auth";
 import Home from "./pages/Home/";
 import Admin from "./pages/Admin/";
 import Task from "./pages/Task/";
 
 const Routes = () => {
-  auth.authenticate((response) => {
-    if(response){
-      console.log("Auth Routes");
-      console.log(response);
-    }
-  })
   return(
     <BrowserRouter>
       <Switch>
-        <HomeRoute exact path="/" component={Home}></HomeRoute>
-        <PrivateRoute exact path="/tasks/" component={Admin}></PrivateRoute>
+        <Route exact path="/" component={Home}></Route>
+        <PrivateRoute exact path="/tasks" component={Admin}></PrivateRoute>
         <PrivateRoute path="/tasks/:id" component={Task}></PrivateRoute>
       </Switch>
     </BrowserRouter>
   )
 }
 
-const HomeRoute = ({ component: Component, ...rest }) => {
-  console.log("Auth Home");
-  console.log(auth.isAuthenticated);
-  return(
-    <Route
-      {...rest}
-      render={props =>
-          auth.isAuthenticated ? (
-          <Redirect to="/tasks" />
-        ) : (
-          <Component {...props} />
-        )
-      }
-    />
-  )  
-}
-
-
 const PrivateRoute = ({ component: Component, ...rest }) => {
   console.log("Auth Private");
-  console.log(auth.isAuthenticated);
+  console.log(isAuthenticated());
   return(
     <Route
       {...rest}
       render={props =>
-          auth.isAuthenticated ? (
+          isAuthenticated() ? (
           <Component {...props} />
         ) : (
           <Redirect
@@ -62,5 +38,26 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     />
   )  
 }
+
+/*
+const HomeRoute = ({ component: Component, ...rest }) => {
+  console.log("Auth Home");
+  console.log(isAuthenticated());
+  return(
+    <Route
+      {...rest}
+      render={props =>
+          isAuthenticated() ? (
+          <Redirect to="/tasks" />
+        ) : (
+          <Component {...props} />
+        )
+      }
+    />
+  )  
+}
+*/
+
+
 
 export default Routes;
