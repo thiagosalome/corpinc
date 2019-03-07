@@ -98,7 +98,7 @@ class FormList extends Component{
           "observacao" : this.state.observation,
         });
 
-        this.setState({formMessage : "Tarefa cadastrada com sucesso."}, this.showMessage);
+        this.setStatse({formMessage : "Tarefa cadastrada com sucesso."}, this.showMessage);
         this.props.formSubmited();
 
       } catch (error) {
