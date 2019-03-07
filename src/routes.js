@@ -9,7 +9,7 @@ const Routes = () => {
   return(
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
+        <HomeRoute exact path="/" component={Home}></HomeRoute>
         <PrivateRoute exact path="/tasks" component={Admin}></PrivateRoute>
         <PrivateRoute path="/tasks/:id" component={Task}></PrivateRoute>
       </Switch>
@@ -39,7 +39,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   )  
 }
 
-/*
 const HomeRoute = ({ component: Component, ...rest }) => {
   console.log("Auth Home");
   console.log(isAuthenticated());
@@ -56,8 +55,6 @@ const HomeRoute = ({ component: Component, ...rest }) => {
     />
   )  
 }
-*/
-
 
 
 export default Routes;

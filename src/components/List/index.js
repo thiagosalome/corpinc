@@ -1,33 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 import "./style.scss";
 
-class List extends Component{
+import {Link} from "react-router-dom";
 
-  render(){
-    return(
-      <div>
-        <h3 className="list__title">Itens</h3>
-        <ul className="list">
-          <li className="list__item">
-            <p>1000,00</p>
-            <a href="" title="">Detalhes</a>
-          </li>
-          <li className="list__item">
-            <p>1000,00</p>
-            <a href="" title="">Detalhes</a>
-          </li>
-          <li className="list__item">
-            <p>1000,00</p>
-            <a href="" title="">Detalhes</a>
-          </li>
-          <li className="list__item">
-            <p>1000,00</p>
-            <a href="" title="">Detalhes</a>
-          </li>
-        </ul>
-      </div>
-    )
-  }
+const List = (props) =>{
+  return(
+    <div>
+      <h3 className="list__title">Itens</h3>
+      <ul className="list">
+        {
+          props.tasks.map((task, index) => (
+            <li key={index} className="list__item">
+              <p>{task.valor}</p>
+              <Link to={`/tasks/${task.id}`}>Detalhes</Link>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  )
 }
 
 export default List;

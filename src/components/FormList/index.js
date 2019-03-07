@@ -92,9 +92,6 @@ class FormList extends Component{
   registerTask = async () => {
     
     if(this.state.formMessage === ''){
-      console.log(this.state.value);
-      console.log(parseFloat(this.state.value));
-      console.log(this.formatNumber(this.state.value));
       try {
         const response = await api.post("/tasks", {
           "valor" : this.formatNumber(this.state.value),
@@ -102,6 +99,7 @@ class FormList extends Component{
         });
 
         this.setState({formMessage : "Tarefa cadastrada com sucesso."}, this.showMessage);
+        this.props.formSubmited();
 
       } catch (error) {
         console.log(error);

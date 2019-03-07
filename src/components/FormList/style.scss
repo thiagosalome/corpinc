@@ -70,6 +70,7 @@
     > label{
       @include font-source('Inter', 14px, $blue-8c, 600, 18px);
       margin-top: 15px;
+      cursor: pointer;
 
       a{
         color: $blue-8c;
