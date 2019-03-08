@@ -1,0 +1,41 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins/font";
+@import "../../styles/abstracts/mixins/button";
+
+.not-found{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: $blue-4b;
+
+  &__card{
+    background-color: $white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px $gray-c4;
+    text-align: center;
+  }
+
+  img{
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  h2{
+    @include font-source("Inter", 30px, $orange-light, normal, normal);
+  }
+  
+  p{
+    @include font-source("Inter", 20px, $blue-4b, bold, normal);
+    margin-top: 10px;
+  }
+
+  a{
+    @include font-source("Inter", 16px, $white, 600, 20px);
+    @include button();
+    display: inline-block;
+    text-decoration: none;
+  }
+}

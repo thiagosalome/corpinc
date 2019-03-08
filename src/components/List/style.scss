@@ -3,6 +3,38 @@
 
 .list{
   margin: 18px 0;
+  height: auto;
+
+  &.scroll{
+    overflow-y: scroll;
+    height: 350px;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $gray-e5; 
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: $orange-light; 
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $blue-4b; 
+    }
+  }
+
+  &__message{
+    @include font-source('Inter', 16px, $blue-4b, normal, 24px);
+    margin: 20px 0;
+    display: none;
+
+    &.active{
+      display: block;
+    }
+  }
 
   &__title{
     @include font-source('Inter', 14px, $blue-8c, normal, 18px);

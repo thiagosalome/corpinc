@@ -8,30 +8,19 @@ class List extends Component {
   render(){
     const allTasks = this.props.tasks.map((task, index) => (
       <li key={index} className="list__item">
-        <p>{this.formatToReal(task.valor)}</p>
+        <p>{task.valor.toLocaleString('pt-BR')}</p>
         <Link to={`/tasks/${task.id}`}>Detalhes</Link>
       </li>
     ))
-
     return(
       <div>
         <h3 className="list__title">Itens</h3>
-        <ul className="list">
+        <ul className={"list " + (this.props.tasks.length > 6 ? "scroll" : "")}>
           {allTasks}
         </ul>
+        <p className={"list__message " + (this.props.tasks.length === 0 ? "active" : "")}>Nenhum item cadastrado</p>
       </div>
     )
-  }
-
-  formatToReal = value => {
-    let newValue = value * 100;
-    let v = newValue.toString();
-    v = v.replace(/\D/g,'');
-    v = (v/100).toFixed(2) + '';
-    v = v.replace(".", ",");
-    v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
-    v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
-    return v;
   }
 }
 

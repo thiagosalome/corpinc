@@ -4,6 +4,7 @@ import {isAuthenticated} from "./services/auth";
 import Home from "./pages/Home/";
 import Admin from "./pages/Admin/";
 import Task from "./pages/Task/";
+import NotFound from "./pages/404/"
 
 const Routes = () => {
   return(
@@ -12,14 +13,13 @@ const Routes = () => {
         <HomeRoute exact path="/" component={Home}></HomeRoute>
         <PrivateRoute exact path="/tasks" component={Admin}></PrivateRoute>
         <PrivateRoute path="/tasks/:id" component={Task}></PrivateRoute>
+        <Route path="*" component={NotFound}></Route>
       </Switch>
     </BrowserRouter>
   )
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log("Auth Private");
-  console.log(isAuthenticated());
   return(
     <Route
       {...rest}
@@ -40,8 +40,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const HomeRoute = ({ component: Component, ...rest }) => {
-  console.log("Auth Home");
-  console.log(isAuthenticated());
   return(
     <Route
       {...rest}

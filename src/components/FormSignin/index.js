@@ -78,12 +78,12 @@ class FormSignin extends Component{
           "password" : this.state.password
         });
         
-        login(response.data.jwt, response.data.user.username);
+        login(response.data.jwt, response.data.user.username, response.data.user._id);
         this.props.history.push("/tasks");
         
       } catch (error) {
         console.log(error);
-        this.setState({formMessage : "Usuário não reconhecido"}, this.showMessage);
+        this.setState({formMessage : "Erro ao autenticar. Confira os dados digitados."}, this.showMessage);
       }
     }
     else{

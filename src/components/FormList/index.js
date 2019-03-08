@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import "./style.scss";
 import api from "../../services/api";
+import {Link} from "react-router-dom";
+import {getId} from "../../services/auth"
 
 class FormList extends Component{
 
@@ -38,7 +40,7 @@ class FormList extends Component{
             <input type="checkbox" id="check-terms" name="" onChange={this.handleChangeCheck} />
             <label htmlFor="check-terms"></label>
           </div>
-          <label htmlFor="check-terms">Aceito os termos <a href="javascript:void(0)" title="descritos">descritos</a></label>
+          <label htmlFor="check-terms">Aceito os termos <Link to="/Termos" title="descritos">descritos</Link></label>
           <input disabled={!this.state.formAccept} className="form-list__submit" type="submit" name="Adicionar" value="Adicionar" />
         </div>
         <p ref={this.messageList} className="form-list__message">{this.state.formMessage}</p>
@@ -93,12 +95,13 @@ class FormList extends Component{
     
     if(this.state.formMessage === ''){
       try {
-        const response = await api.post("/tasks", {
+        await api.post("/tasks", {
           "valor" : this.formatNumber(this.state.value),
           "observacao" : this.state.observation,
+          "user" : getId()
         });
 
-        this.setStatse({formMessage : "Tarefa cadastrada com sucesso."}, this.showMessage);
+        this.setState({formMessage : "Tarefa cadastrada com sucesso."}, this.showMessage);
         this.props.formSubmited();
 
       } catch (error) {

@@ -1,0 +1,35 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins/font";
+
+.main-header{
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+
+  &__container{
+    box-sizing: border-box;
+    padding: 0 20px;
+    max-width: 1366px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+  }
+
+  &__title{
+
+    a{
+      @include font-source('Roboto', 36px, $white, bold, normal);
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .main-header{
+    height: 80px;
+  }
+}

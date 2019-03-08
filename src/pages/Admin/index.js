@@ -1,11 +1,12 @@
 import React, {Component} from "react";
 import "./style.scss";
-import Header from "../../layout/Header/";
-import Banner from "../../layout/Banner/";
+import Header from "../../components/Header/";
+import Banner from "../../components/Banner/";
 import FormList from "../../components/FormList/";
 import List from "../../components/List/";
-import Footer from "../../layout/Footer/";
+import Footer from "../../components/Footer/";
 import api from "../../services/api";
+import {getId} from "../../services/auth";
 
 class Admin extends Component {
 
@@ -42,7 +43,7 @@ class Admin extends Component {
   }
 
   loadTasks = async () => {
-    const response = await api.get("/tasks");
+    const response = await api.get(`/tasks?user=${getId()}`);
     this.setState({tasks : response.data})
   }
 }

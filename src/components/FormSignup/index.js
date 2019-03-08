@@ -82,7 +82,7 @@ class FormSignup extends Component{
     
     if(this.state.formMessage === ''){
       try {
-        const response = await api.post("/auth/local/register", {
+        await api.post("/auth/local/register", {
           "username" : this.state.name,
           "email" : this.state.email,
           "password" : this.state.password

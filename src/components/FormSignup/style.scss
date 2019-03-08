@@ -60,7 +60,7 @@
 
   &__message{
     @include message();
-    bottom: -70px;
+    bottom: -90px;
 
     &.active{
       bottom: -25px;

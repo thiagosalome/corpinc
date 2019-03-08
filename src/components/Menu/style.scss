@@ -2,6 +2,7 @@
 @import "../../styles/abstracts/mixins/font";
 
 .menu{
+  display: flex;
 
   &__hamburguer{
     display: none;
@@ -17,6 +18,75 @@
         @include font-source('Roboto', 16px, $white, normal, normal);
         padding: 5px 20px;
         text-decoration: none;
+      }
+    }
+  }
+
+  &__user{
+    display: flex;
+    align-items: center;
+
+    &:hover{
+      cursor: pointer;
+    }
+    
+    p{
+      @include font-source('Roboto', 16px, $white, bold, normal);
+      padding: 0 15px;
+      border-left: 1px solid $white;
+    }
+
+    span{
+      display: flex;
+      align-items: center;
+
+      &::after{
+        border-top: 5px solid $white;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        content: "";
+      }
+    }
+  }
+
+  &__box{
+    background-color: $white;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    right: 15px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+    z-index: 10;
+    top: 80px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+
+    &::before{
+      position: absolute;
+      top: -5px;
+      right: 5px;
+      border-bottom: 5px solid #fff;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      content: "";
+    }
+
+    &.active{
+      top: 70px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    button{
+      color: $orange-light;
+      font-weight: 700;
+      font-size: 15px;
+      background-color: transparent;
+      border: none;
+
+      &:hover{
+        cursor: pointer;
       }
     }
   }

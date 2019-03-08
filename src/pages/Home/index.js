@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import Header from "../../layout/Header/";
+import Header from "../../components/Header/";
 import FormSignup from "../../components/FormSignup/";
 import FormSignin from "../../components/FormSignin/";
 import Slider from "../../components/Slider/";

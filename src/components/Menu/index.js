@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import "./style.scss";
-
+import {Link, withRouter } from "react-router-dom";
+import {getUser, isAuthenticated, logout} from "../../services/auth";
 class Menu extends Component{
   constructor(props){
     super(props);
 
+    this.headerBox = React.createRef()
     this.state = {
       open : false
     }
@@ -13,7 +15,7 @@ class Menu extends Component{
   render(){
     const items = ['Sobre','Produtos','Contato'];
     const menuItems = items.map((value, index) => (
-      <li key={index} className="menu__list-item"><a href="javascript:void(0)" title={value}>{value}</a></li>
+      <li key={index} className="menu__list-item"><Link to={value} title={value}>{value}</Link></li>
     ))
 
     return(
@@ -31,6 +33,21 @@ class Menu extends Component{
             {menuItems} 
           </ul>
         </nav>
+        {
+          isAuthenticated() ?
+            (
+              <div className="menu__session">
+                <div onClick={this.handleClickBox} className="menu__user">
+                  <p>{getUser()}</p>
+                  <span></span>
+                </div>
+                <div ref={this.headerBox} className="menu__box">
+                  <button onClick={this.handleClickLogout}>Logout</button>
+                </div>
+              </div>
+            )
+          : ""
+        }
       </div>
     )
   }
@@ -40,6 +57,15 @@ class Menu extends Component{
       open : !this.state.open
     })
   }
+
+  handleClickLogout = event => {
+    logout();
+    this.props.history.push("/");
+  }
+  
+  handleClickBox = event => {
+    this.headerBox.current.classList.toggle("active")
+  }
 }
 
-export default Menu;
+export default withRouter(Menu);
