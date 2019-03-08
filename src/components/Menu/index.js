@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import "./style.scss";
 import {Link, withRouter } from "react-router-dom";
 import {getUser, isAuthenticated, logout} from "../../services/auth";
+
+/**
+ * Componente de navegação localizado dentro do Header. Junto a ele há um pequeno bloco
+ * que é apresentado ao usuário demonstrando que ele está logado.
+ */
 class Menu extends Component{
   constructor(props){
     super(props);
@@ -52,17 +57,36 @@ class Menu extends Component{
     )
   }
 
+
+  /**
+   * Método responsável por controlar o estado de visibilidade do
+   * menu em dispositivos pequenos.
+   *
+   * @memberof Menu
+   */
   handleClick = () => {
     this.setState({
       open : !this.state.open
     })
   }
 
+  /**
+   * Método responsável por interceptar o evento do botão de logout e redirecionar
+   * o usuário para a home
+   *
+   * @memberof Menu
+   */
   handleClickLogout = event => {
     logout();
     this.props.history.push("/");
   }
   
+  /**
+   * Método responsável por apresentar ao usuário uma caixa com o botão de logout
+   * quanto o mesmo clica sobre seu nome no canto superior direito da tela.
+   *
+   * @memberof Menu
+   */
   handleClickBox = event => {
     this.headerBox.current.classList.toggle("active")
   }

@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import "./style.scss";
 
+/**
+ * Esse componente é responsável por criar uma animação de slide
+ * entre os formulários de cadastro e login
+ *
+ * @class Slider
+ * @extends {Component}
+ */
 class Slider extends Component{
   constructor(props){
     super(props);
@@ -22,6 +29,12 @@ class Slider extends Component{
     )
   }
 
+  /**
+   * Método que intercepta o clique do botão que ativa o slide e apresenta o 
+   * formulário referente ao data-to localizado nesse mesmo botão  
+   *
+   * @memberof Slider
+   */
   handleClick = event => {
     const index = parseInt(event.target.getAttribute("data-to"));
     const sliderList = this.sliderList.current;

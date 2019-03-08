@@ -45,17 +45,34 @@ class FormSignup extends Component{
     )
   }
 
+  /**
+   * Método responsável por pegar os valores dos inputs Nome, Email e Senha
+   * e adicioná-los ao estado.
+   *
+   * @memberof FormSignup
+   */
   handleChange = event => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({[name]: value})
   }
 
+  /**
+   * Método responsável por interceptar o envio do formulário e fazer 
+   * as devidas validações
+   *
+   * @memberof FormSignup
+   */
   handleSubmit = event => {
     event.preventDefault();
     this.validateField();
   }
 
+  /**
+   * Métdo responsável por validar os campos do formulário
+   *
+   * @memberof FormSignup
+   */
   validateField = () => {
     let formMessage = this.state.formMessage;
     let nameValid = /^[a-zA-Z ]{2,30}$/.test(this.state.name);
@@ -78,6 +95,11 @@ class FormSignup extends Component{
     this.setState({formMessage}, this.registerUser);
   }
 
+  /**
+   * Método responsável por realizar o cadastro do usuário
+   *
+   * @memberof FormSignup
+   */
   registerUser = async () => {
     
     if(this.state.formMessage === ''){
@@ -102,6 +124,12 @@ class FormSignup extends Component{
     }
   }
 
+  /**
+   * Método responsável por mostrar a mensagem ao usuário, desaparecendo logo
+   * em seguida
+   *
+   * @memberof FormSignup
+   */
   showMessage = (callbackSuccess) => {
     const message = this.messageSignup.current;
     message.classList.add("active");

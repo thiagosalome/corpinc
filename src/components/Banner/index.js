@@ -3,6 +3,9 @@ import "./style.scss";
 import banner from "../../assets/images/banner.png";
 import bannerMobile from "../../assets/images/banner-mobile.png";
 
+/**
+ * Componente referente a seção principal da área de administrador
+ */
 const Banner = () => {
   return(
     <section className="banner">

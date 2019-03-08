@@ -4,6 +4,13 @@ import api from "../../services/api";
 import {Link} from "react-router-dom";
 import {getId} from "../../services/auth"
 
+/**
+ * Esse componente se refere ao formulário responsável por adicionar 
+ * novas tarefas
+ * 
+ * @class FormList
+ * @extends {Component}
+ */
 class FormList extends Component{
 
   constructor(props){
@@ -48,10 +55,22 @@ class FormList extends Component{
     )
   }
 
+  /**
+   * Método responsável por permitir o envio do formulário caso o usuário 
+   * aceite os termos
+   * 
+   * @memberof FormList
+   */
   handleChangeCheck = () => {
     this.setState({formAccept : !this.state.formAccept})
   }
 
+  /**
+   * Método responsável por criar uma máscara de real a cada vez que o usuário 
+   * adiciona um número
+   *
+   * @memberof FormList
+   */
   maskValue = event => {
     let v = event.target.value.replace(/\D/g,'');
     v = (v/100).toFixed(2) + '';
@@ -62,17 +81,34 @@ class FormList extends Component{
     this.setState({value : v})
   }
 
+  /**
+   * Método responsável por pegar os valores dos inputs Valor e Observação
+   * e adicioná-los ao estado.
+   *
+   * @memberof FormList
+   */
   handleValueChange = event => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({[name]: value})
   }
 
+  /**
+   * Método responsável por interceptar o envio do formulário e fazer 
+   * as devidas validações
+   *
+   * @memberof FormList
+   */
   handleSubmit = event => {
     event.preventDefault();
     this.validateField();
   }
 
+  /**
+   * Métdo responsável por validar os campos do formulário
+   *
+   * @memberof FormList
+   */
   validateField = () => {
     let formMessage = this.state.formMessage;
     let valueValid = parseInt(this.state.value) > 0;
@@ -91,6 +127,11 @@ class FormList extends Component{
     this.setState({formMessage}, this.registerTask);
   }
 
+  /**
+   * Método responsável por registrar uma nova tarefa
+   *
+   * @memberof FormList
+   */
   registerTask = async () => {
     
     if(this.state.formMessage === ''){
@@ -114,10 +155,22 @@ class FormList extends Component{
     }
   }
 
+  /**
+   * Método responsável por formatar o valor para que ele seja aceito
+   * no lado do servidor
+   *
+   * @memberof FormList
+   */
   formatNumber = (number) => {
     return parseFloat(number.replace(/\./g, "").replace(",", "."));
   }
 
+  /**
+   * Método responsável por mostrar a mensagem ao usuário, desaparecendo logo
+   * em seguida
+   *
+   * @memberof FormList
+   */
   showMessage = () => {
     const message = this.messageList.current;
     message.classList.add("active");

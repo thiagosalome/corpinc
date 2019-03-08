@@ -4,6 +4,13 @@ import api from "../../services/api";
 import {login} from "../../services/auth";
 import { withRouter } from "react-router-dom";
 
+/**
+ * Esse componente se refere ao formulário responsável por autenticar
+ * o usuário, permitindo a ele acesso a aplicação 
+ * 
+ * @class FormSignin
+ * @extends {Component}
+ */
 class FormSignin extends Component{
   constructor(props){
     super(props);
@@ -40,12 +47,23 @@ class FormSignin extends Component{
     )
   }
 
+  /**
+   * Método responsável por pegar os valores dos inputs Email e Senha
+   * e adicioná-los ao estado.
+   *
+   * @memberof FormSignin
+   */
   handleChange = event => {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({[name]: value})
   }
 
+  /**
+   * Métdo responsável por validar os campos do formulário
+   *
+   * @memberof FormSignin
+   */
   validateField = () => {
     let formMessage = this.state.formMessage;
     let emailValid = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(this.state.email);
@@ -64,11 +82,22 @@ class FormSignin extends Component{
     this.setState({formMessage}, this.signinUser);
   }
 
+  /**
+   * Método responsável por interceptar o envio do formulário e fazer 
+   * as devidas validações
+   *
+   * @memberof FormSignin
+   */
   handleSubmit = event => {
     event.preventDefault();
     this.validateField();
   }
 
+  /**
+   * Método responsável por realizar a autenticação do usuário
+   *
+   * @memberof FormSignin
+   */
   signinUser = async () => {
     
     if(this.state.formMessage === ''){
@@ -91,6 +120,12 @@ class FormSignin extends Component{
     }
   }
 
+  /**
+   * Método responsável por mostrar a mensagem ao usuário, desaparecendo logo
+   * em seguida
+   *
+   * @memberof FormSignin
+   */
   showMessage = () => {
     const message = this.messageSignin.current;
     message.classList.add("active")
