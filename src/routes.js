@@ -8,7 +8,7 @@ import NotFound from "./pages/404/"
 
 const Routes = () => {
   return(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <HomeRoute exact path="/" component={Home}></HomeRoute>
         <PrivateRoute exact path="/tasks" component={Admin}></PrivateRoute>
