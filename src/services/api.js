@@ -2,7 +2,7 @@ import axios from "axios";
 import {getToken} from "./auth";
 
 const api = axios.create({
-  baseURL : "http://localhost:1337/"
+  baseURL : "https://pacific-inlet-35392.herokuapp.com/"
 });
 
 api.interceptors.request.use(async config => {

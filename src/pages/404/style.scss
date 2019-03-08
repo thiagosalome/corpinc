@@ -28,7 +28,7 @@
   }
   
   p{
-    @include font-source("Inter", 20px, $blue-4b, bold, normal);
+    @include font-source("Inter", 20px, $blue-4b, normal, normal);
     margin-top: 10px;
   }
 
