@@ -24,3 +24,5 @@ yarn-error.log*
 
 details.todo
 tasks.todo
+yarn.lock
+packa-lock.json
