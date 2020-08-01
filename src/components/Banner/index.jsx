@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Assets
-import banner from "../../assets/images/banner.png";
-import bannerMobile from "../../assets/images/banner-mobile.png";
+import banner from '../../assets/images/banner.png';
+import bannerMobile from '../../assets/images/banner-mobile.png';
 
 // Styles
-import "./style.scss";
+import './style.scss';
 
 /**
  * Componente referente a seção principal da área de administrador

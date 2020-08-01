@@ -54,5 +54,4 @@ const HomeRoute = ({ component: Component, ...rest }) => {
   )  
 }
 
-
 export default Routes;

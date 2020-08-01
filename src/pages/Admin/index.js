@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import "./style.scss";
-import Header from "../../components/Header/";
-import Banner from "../../components/Banner/";
-import FormList from "../../components/FormList/";
-import List from "../../components/List/";
-import Footer from "../../components/Footer/";
+import Header from "../../components/Header";
+import Banner from "../../components/Banner";
+import FormList from "../../components/FormList";
+import List from "../../components/List";
+import Footer from "../../components/Footer";
 import api from "../../services/api";
 import {getId} from "../../services/auth";
 
