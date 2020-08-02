@@ -1,5 +1,7 @@
 # Aplicação CorpInc
 
+[Link](https://thiagosalome.github.io/corpinc/)
+
 A aplicação CorpInc foi criada utilizando a biblioteca [ReactJS](https://reactjs.org/) no lado do cliente e o framework [Strapi](https://strapi.io/) no lado do servidor. Esse repositório engloba apenas o cliente, de forma que a aplicação é alimentada pela API hospedada no Heroku.
 
 ## Acessando a aplicação
