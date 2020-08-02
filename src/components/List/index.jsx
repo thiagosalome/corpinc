@@ -27,6 +27,10 @@ const List = ({ tasks }) => (
 
 export default List;
 
+List.defaultProps = {
+  tasks: [],
+};
+
 List.propTypes = {
-  tasks: PropTypes.array.isRequired,
+  tasks: PropTypes.arrayOf(PropTypes.object),
 };
