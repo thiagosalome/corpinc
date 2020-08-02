@@ -3,7 +3,7 @@ import axios from 'axios';
 import { getToken } from './auth';
 
 const api = axios.create({
-  baseURL: 'https://pacific-inlet-35392.herokuapp.com/',
+  baseURL: 'https://api-corpinc.herokuapp.com/',
 });
 
 api.interceptors.request.use(async (config) => {
