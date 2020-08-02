@@ -1,56 +1,47 @@
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 
 // Components
 import Loading from '../Loading';
 
 // Services
 import api from '../../services/api';
-import { login } from '../../services/auth';
 
 // Styles
 import './style.scss';
 
-/**
- * Esse componente se refere ao formulário responsável por autenticar
- * o usuário, permitindo a ele acesso a aplicação
- *
- * @class FormSignin
- * @extends {Component}
- */
-const FormSignin = ({ handleClick }) => {
+const FormSignup = ({ handleClick }) => {
   const {
     register, errors, handleSubmit,
   } = useForm();
+  const buttonLogin = useRef();
   const [message, setMessage] = useState('');
   const [showMessage, setShowMessage] = useState(false);
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
 
   /**
-   * Método responsável por realizar a autenticação do usuário
+   * Método responsável por realizar o cadastro do usuário
    *
-   * @memberof FormSignin
+   * @memberof FormSignup
    */
-  async function signinUser(values) {
-    const { email, password } = values;
+  async function registerUser(values) {
+    const { name, email, password } = values;
     try {
       setLoading(true);
-      const response = await api.post('/auth/local/', {
-        identifier: email,
+      await api.post('/auth/local/register', {
+        username: name,
+        email,
         password,
       });
 
       setLoading(false);
-      login(response.data.jwt, response.data.user.username, response.data.user._id);
-      history.push('/tasks');
+      setMessage('Usuário cadastrado com sucesso.');
+      buttonLogin.current.click();
     } catch (error) {
       setLoading(false);
-      setMessage('Erro ao autenticar. Confira os dados digitados.');
+      setMessage('Erro ao cadastrar');
     }
   }
 
@@ -65,13 +56,25 @@ const FormSignin = ({ handleClick }) => {
   }, [message]);
 
   return (
-    <div className="signin">
+    <div className="signup">
       <header>
-        <h3>Acessar conta</h3>
-        <button type="button" data-to="0" onClick={handleClick}>Cadastrar</button>
+        <h3>Criar uma conta</h3>
+        <button ref={buttonLogin} type="button" data-to="1" onClick={handleClick}>Acessar</button>
       </header>
-      <form className="form-signin" onSubmit={handleSubmit(signinUser)} method="post">
-        <div className="form-signin__item">
+      <form className="form-signup" onSubmit={handleSubmit(registerUser)} method="post">
+        <div className="form-signup__item">
+          <label htmlFor="name">Nome</label>
+          <input
+            ref={register({
+              required: 'Nome é obrigatório',
+            })}
+            type="text"
+            name="name"
+            id="name"
+          />
+          { errors.name && <p className="form-signin__error">{errors.name.message}</p> }
+        </div>
+        <div className="form-signup__item">
           <label htmlFor="email">E-mail</label>
           <input
             ref={register({
@@ -87,7 +90,7 @@ const FormSignin = ({ handleClick }) => {
           />
           { errors.email && <p className="form-signin__error">{errors.email.message}</p> }
         </div>
-        <div className="form-signin__item">
+        <div className="form-signup__item">
           <label htmlFor="password">Senha</label>
           <input
             ref={register({
@@ -103,16 +106,16 @@ const FormSignin = ({ handleClick }) => {
           />
           { errors.password && <p className="form-signin__error">{errors.password.message}</p> }
         </div>
-        <input disabled={loading} className="form-signin__submit" type="submit" name="Acessar" value={loading ? 'Carregando...' : 'Acessar'} />
+        <input disabled={loading} className="form-signup__submit" type="submit" name="Cadastrar" value={loading ? 'Carregando...' : 'Cadastrar'} />
         { loading && <Loading />}
-        { message && <p className={`form-signin__message ${showMessage ? ' active' : ''}`}>{message}</p> }
+        { message && <p className={`form-signup__message ${showMessage ? ' active' : ''}`}>{message}</p> }
       </form>
     </div>
   );
 };
 
-FormSignin.propTypes = {
+FormSignup.propTypes = {
   handleClick: PropTypes.func.isRequired,
 };
 
-export default FormSignin;
+export default FormSignup;

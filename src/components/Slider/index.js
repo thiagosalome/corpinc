@@ -17,7 +17,7 @@ class Slider extends Component{
 
   render(){
     const sliderItens = this.props.children.map((item, index) => (
-      <li key={index} ref={this.sliderListItem} className="slider__list-item">{<item.type onClick={this.handleClick}></item.type>}</li>
+      <li key={index} ref={this.sliderListItem} className="slider__list-item">{<item.type handleClick={this.handleClick}></item.type>}</li>
     ));
 
     return(
