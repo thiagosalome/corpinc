@@ -28,7 +28,7 @@ const Admin = () => {
 
   useEffect(() => {
     loadTasks();
-  });
+  }, []);
 
   return (
     <main className="admin">
