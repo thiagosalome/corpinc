@@ -6,12 +6,12 @@
 
   &__list{
     display: flex;
-    position: absolute;
-    left: 0;
+    // position: absolute;
+    // left: 0;
     transition: all 0.3s ease-in-out;
 
-    &-item{
-
+    &-item:last-child{
+      padding-left: 30px;
     }
   }
 }
