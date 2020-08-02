@@ -8,9 +8,6 @@ import './style.scss';
 /**
  * Esse componente é responsável por criar uma animação de slide
  * entre os formulários de cadastro e login
- *
- * @class Slider
- * @extends {Component}
  */
 const Slider = ({ children }) => {
   const sliderList = useRef();

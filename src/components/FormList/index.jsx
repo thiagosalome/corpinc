@@ -18,9 +18,6 @@ import './style.scss';
 /**
  * Esse componente se refere ao formulário responsável por adicionar
  * novas tarefas
- *
- * @class FormList
- * @extends {Component}
  */
 const FormList = ({ formSubmited }) => {
   const {

@@ -18,9 +18,6 @@ import './style.scss';
 /**
  * Esse componente se refere ao formulário responsável por autenticar
  * o usuário, permitindo a ele acesso a aplicação
- *
- * @class FormSignin
- * @extends {Component}
  */
 const FormSignin = ({ handleClick }) => {
   const {
