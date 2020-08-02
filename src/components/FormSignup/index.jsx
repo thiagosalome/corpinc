@@ -63,19 +63,19 @@ const FormSignup = ({ handleClick }) => {
       </header>
       <form className="form-signup" onSubmit={handleSubmit(registerUser)} method="post">
         <div className="form-signup__item">
-          <label htmlFor="name">Nome</label>
+          <label htmlFor="signup-name">Nome</label>
           <input
             ref={register({
               required: 'Nome é obrigatório',
             })}
             type="text"
             name="name"
-            id="name"
+            id="signup-name"
           />
           { errors.name && <p className="form-signin__error">{errors.name.message}</p> }
         </div>
         <div className="form-signup__item">
-          <label htmlFor="email">E-mail</label>
+          <label htmlFor="signup-email">E-mail</label>
           <input
             ref={register({
               required: 'E-mail é obrigatório',
@@ -86,12 +86,12 @@ const FormSignup = ({ handleClick }) => {
             })}
             type="email"
             name="email"
-            id="email"
+            id="signup-email"
           />
           { errors.email && <p className="form-signin__error">{errors.email.message}</p> }
         </div>
         <div className="form-signup__item">
-          <label htmlFor="password">Senha</label>
+          <label htmlFor="signup-password">Senha</label>
           <input
             ref={register({
               required: 'Senha é obrigatória',
@@ -102,7 +102,7 @@ const FormSignup = ({ handleClick }) => {
             })}
             type="password"
             name="password"
-            id="password"
+            id="signup-password"
           />
           { errors.password && <p className="form-signin__error">{errors.password.message}</p> }
         </div>
@@ -114,8 +114,12 @@ const FormSignup = ({ handleClick }) => {
   );
 };
 
+FormSignup.defaultProps = {
+  handleClick: () => {},
+};
+
 FormSignup.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
 };
 
 export default FormSignup;

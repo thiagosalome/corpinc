@@ -72,7 +72,7 @@ const FormSignin = ({ handleClick }) => {
       </header>
       <form className="form-signin" onSubmit={handleSubmit(signinUser)} method="post">
         <div className="form-signin__item">
-          <label htmlFor="email">E-mail</label>
+          <label htmlFor="signin-email">E-mail</label>
           <input
             ref={register({
               required: 'E-mail é obrigatório',
@@ -83,12 +83,12 @@ const FormSignin = ({ handleClick }) => {
             })}
             type="email"
             name="email"
-            id="email"
+            id="signin-email"
           />
           { errors.email && <p className="form-signin__error">{errors.email.message}</p> }
         </div>
         <div className="form-signin__item">
-          <label htmlFor="password">Senha</label>
+          <label htmlFor="signin-password">Senha</label>
           <input
             ref={register({
               required: 'Senha é obrigatória',
@@ -99,7 +99,7 @@ const FormSignin = ({ handleClick }) => {
             })}
             type="password"
             name="password"
-            id="password"
+            id="signin-password"
           />
           { errors.password && <p className="form-signin__error">{errors.password.message}</p> }
         </div>
@@ -111,8 +111,12 @@ const FormSignin = ({ handleClick }) => {
   );
 };
 
+FormSignin.defaultProps = {
+  handleClick: () => {},
+};
+
 FormSignin.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
 };
 
 export default FormSignin;
