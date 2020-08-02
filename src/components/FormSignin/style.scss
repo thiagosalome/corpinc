@@ -59,10 +59,17 @@
 
   &__message{
     @include message();
-    bottom: -150px;
+    bottom: -180px;
 
     &.active{
-      bottom: -50px;
+      bottom: -80px;
     }
+  }
+
+  &__error {
+    color: $red;
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
   }
 }

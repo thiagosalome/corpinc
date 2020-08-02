@@ -28,5 +28,5 @@ const List = ({ tasks }) => (
 export default List;
 
 List.propTypes = {
-  tasks: PropTypes.arrayOf[PropTypes.object].isRequired,
+  tasks: PropTypes.array.isRequired,
 };

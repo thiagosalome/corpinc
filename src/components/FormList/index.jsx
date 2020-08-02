@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable radix */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
@@ -96,6 +98,7 @@ const FormList = ({ formSubmited }) => {
     if (message) {
       setShowMessage(true);
       setTimeout(() => {
+        setMessage('');
         setShowMessage(false);
       }, 3000);
     }

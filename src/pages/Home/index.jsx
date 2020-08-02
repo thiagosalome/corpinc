@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Components
-import Header from '../../components/Header;
-import FormSignup from '../../components/FormSignup;
-import FormSignin from '../../components/FormSignin;
-import Slider from '../../components/Slider;
+import Header from '../../components/Header';
+import FormSignup from '../../components/FormSignup';
+import FormSignin from '../../components/FormSignin';
+import Slider from '../../components/Slider';
 
 // Styles
 import './style.scss';
