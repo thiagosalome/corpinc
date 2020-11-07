@@ -47,8 +47,12 @@ O **CorpInc** foi meu projeto teste no Banco Inter. Foi enriquecedor pelo fato d
         <p>HTML</p>
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/css.png" width='50' alt="CSS">
-        <p>CSS</p>
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/sass.png" width='50' alt="SASS">
+        <p>SASS</p>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/javascript.png" width='50' alt="React">
+        <p>Javascript</p>
       </td>
       <td align="center">
         <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/react-base.png" width='50' alt="React">
