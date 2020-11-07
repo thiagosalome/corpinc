@@ -18,7 +18,6 @@
  <a href="#computer-sobre">Sobre</a> •
  <a href="#gear-funcionalidades">Funcionalidades</a> •
  <a href="#wrench-tecnologias-utilizadas">Tecnologias</a> •
- <a href="#art-layout">Layout</a> •  
  <a href="#movie_camera-preview">Preview</a> •
  <a href="#memo-licença">Licença</a>
 </p>
