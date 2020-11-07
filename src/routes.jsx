@@ -40,7 +40,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 PrivateRoute.propTypes = {
-  component: PropTypes.func.isRequired
+  component: PropTypes.func.isRequired,
 };
 
 const HomeRoute = ({ component: Component, ...rest }) => (

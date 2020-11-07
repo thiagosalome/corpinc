@@ -1,28 +1,128 @@
-# Aplicação CorpInc
+<!-- Logo -->
+<h1 align="center">
+  CorpInc.
+</h1>
 
-[Link](https://thiagosalome.github.io/corpinc/)
+<!-- Badges -->
+<p align="center">
+  <a href="https://thiagosalome.github.io/corpinc/" target="_blank"><img alt="CorpInc" title="CorpInc" src="https://img.shields.io/badge/Aplica%C3%A7%C3%A3o-CorpInc-ff500f" />
+  </a>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/thiagosalome/corpInc?color=ff500f">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/thiagosalome/corpInc?color=ff500f">
+  <img alt="GitHub package.json version badge" src="https://img.shields.io/github/downloads/thiagosalome/corpInc/total?color=ff500f">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-8257E5?color=ff500f">
+</p>
 
-A aplicação CorpInc foi criada utilizando a biblioteca [ReactJS](https://reactjs.org/) no lado do cliente e o framework [Strapi](https://strapi.io/) no lado do servidor. Esse repositório engloba apenas o cliente, de forma que a aplicação é alimentada pela API hospedada no Heroku.
+<!-- Indice-->
+<p align="center">
+ <a href="#computer-sobre">Sobre</a> •
+ <a href="#gear-funcionalidades">Funcionalidades</a> •
+ <a href="#wrench-tecnologias-utilizadas">Tecnologias</a> •
+ <a href="#art-layout">Layout</a> •  
+ <a href="#movie_camera-preview">Preview</a> •
+ <a href="#memo-licença">Licença</a>
+</p>
 
-## Acessando a aplicação
+## :computer: Sobre
 
-Você pode acessar a aplicação hospedada no GitHub clicando [aqui](https://thiagosalome.github.io/corpinc/)
+O **CorpInc** foi meu projeto teste no Banco Inter. Foi enriquecedor pelo fato de ser uma das minha primeiras aplicações utilizando React e Strapi.
 
-## Requisitos
+## :gear: Funcionalidades
 
-- Node ([Link de instalação](https://nodejs.org/en/download/))
-- Npm ([Link de instalação](https://www.npmjs.com/get-npm))
+- [x] Usuário
+  - [x] Criar uma conta
+  - [x] Fazer Login
+  - [x] Criar uma task
+    - [x] Valor da task
+    - [x] Observação
+  - [x] Visualizar tasks cadastradas
 
-## Rodando o projeto localmente
+## :wrench: Tecnologias Utilizadas
 
-### Clone o projeto
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/html.png" width='50' alt="HTML">
+        <p>HTML</p>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/css.png" width='50' alt="CSS">
+        <p>CSS</p>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/react-base.png" width='50' alt="React">
+        <p>React</p>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/node.png" width='50' alt="Node">
+        <p>Node.js</p>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/strapi.png" width='50' alt="Strapi">
+        <p>Strapi</p>
+      </td>
+      <td align="center">
+        <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/mongo.png" width='50' alt="Mongo">
+        <p>Mongo</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-`git clone https://thiagosalome.github.io/corpinc/`
+## :movie_camera: Preview
 
-### Instale as dependências
+### Desktop
 
-`npm install`
+<img src="./.github/preview-web.gif" alt="Preview Web" title="Preview Web">
 
-### Rode o prtodo-listojeto
+### Mobile
 
-`npm run start`
+<img width="200" src="./.github/preview-mobile.gif" alt="Preview Mobile" title="Preview Mobile">
+
+## :rocket: Executando o projeto
+
+### Pré-requisitos
+
+Para executar o projeto é necessário ter instalado as seguintes ferramentas:
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <a href='https://git-scm.com/downloads' target='_blank'>
+          <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/git.png" width='50' alt="React">
+          <p>GIT</p>
+        </a>
+      </td>
+      <td>
+        <a href='https://git-scm.com/downloads' target='_blank'>
+          <img src="https://raw.githubusercontent.com/thiagosalome/technologies-icons/master/node.png" width='50' alt="React">
+          <p>Node.js</p>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### Rodando aplicação web
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/thiagosalome/corpinc
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd corpinc
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+```
+
+## :memo: Licença
+
+Este projeto esta sobe a licença [MIT](./LICENCE).
