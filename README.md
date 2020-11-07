@@ -1,5 +1,6 @@
 <!-- Logo -->
 <h1 align="center">
+  <img src="./.github/favicon.ico" alt="Icon" width="30">
   CorpInc.
 </h1>
 
